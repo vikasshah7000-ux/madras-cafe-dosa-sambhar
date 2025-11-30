@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Madras Cafe Dosa Sambhar — Jaipur</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 0; padding: 0; background:#f7f7f8; color:#222; }
+    header { background: #9b5cff; color: white; padding: 20px; text-align: center; }
+    .container { max-width: 960px; margin: 20px auto; padding: 16px; background: #fff; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .top { display:flex; flex-wrap:wrap; gap:16px; align-items:center; }
+    .logo { flex: 1 1 240px; min-width: 220px; }
+    .logo h1 { margin:0 0 6px 0; font-size: 1.5rem; }
+    .meta { flex: 2 1 320px; }
+    .meta p { margin:6px 0; }
+    .btn { display:inline-block; text-decoration:none; padding:10px 14px; border-radius:8px; margin-right:8px; }
+    .btn-primary { background:#ffde7a; color:#3a2300; }
+    .btn-outline { background:transparent; border:1px solid #ddd; color:#333; }
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:16px; }
+    .gallery img { width:100%; height:150px; object-fit:cover; border-radius:8px; display:block; }
+    .section { margin-top:18px; }
+    table.hours { width:100%; border-collapse: collapse; max-width:420px; }
+    table.hours td { padding:8px 6px; border-bottom:1px solid #eee; }
+    .reviews .review { padding:12px; border-radius:8px; background:#fafafa; margin-bottom:10px; }
+    footer { text-align:center; margin:18px 0; color:#666; font-size:0.9rem; }
+
+    /* New: open/closed badge */
+    .status {
+      display:inline-block;
+      padding:6px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+    .open { background:#c8ffd1; color:#005c1a; }
+    .closed { background:#ffd4d4; color:#7a0000; }
+
+    @media (max-width:640px){ .top { flex-direction:column; } .meta { width:100%; } }
+  </style>
+
+  <!-- Structured data (JSON-LD) for business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Madras Cafe Dosa Sambhar",
+    "telephone": "+919660554636",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hawa Sadak Rd, Geejgarh Vihar Colony, Bais Godam",
+      "addressLocality": "Jaipur",
+      "addressRegion": "Rajasthan",
+      "postalCode": "302019",
+      "addressCountry": "IN"
+    },
+    "url": "https://maps.app.goo.gl/r2UnA5fRYeLgSXG66",
+    "openingHours": [
+      "Mon-Thu 16:00-23:00",
+      "Fri-Sat 16:00-23:00",
+      "Sun 16:00-23:00"
+    ]
+  }
+  </script>
+
+  <!-- NEW: Live Status Script -->
+  <script>
+    function updateShopStatus() {
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const current = hours * 60 + minutes;
+
+      const open = 16 * 60;   // 4:00 PM
+      const close = 23 * 60;  // 11:00 PM
+
+      const el = document.getElementById("shopStatus");
+
+      if (current >= open && current < close) {
+        el.textContent = "OPEN NOW";
+        el.classList.add("open");
+      } else {
+        el.textContent = "CLOSED NOW";
+        el.classList.add("closed");
+      }
+    }
+
+    window.onload = updateShopStatus;
+  </script>
+
+</head>
+<body>
+  <header>
+    <div style="max-width:1100px;margin:0 auto">
+      <strong style="font-size:1.25rem">Madras Cafe Dosa Sambhar</strong><br>
+
+      <!-- NEW: Status badge -->
+      <span id="shopStatus" class="status">Checking...</span>
+
+      <div style="opacity:0.95; margin-top:6px;">South Indian • Dosas • Sambhar</div>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="top">
+      <div class="logo">
+        <h1>Madras Cafe Dosa Sambhar</h1>
+
+        <!-- Status below name for mobile also -->
+        <span id="shopStatusMobile" class="status" style="display:none;">Checking...</span>
+
+        <p><strong>Address:</strong> Hawa Sadak Rd, Geejgarh Vihar Colony, Bais Godam, Jaipur, Rajasthan</p>
+        <p>
+          <a class="btn btn-primary" href="tel:+919660554636">Call: +91 96605 54636</a>
+          <a class="btn btn-outline" href="https://wa.me/919660554636" target="_blank" rel="noopener">WhatsApp</a>
+        </p>
+        <p>
+          <a class="btn btn-outline" href="https://maps.app.goo.gl/r2UnA5fRYeLgSXG66" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+        </p>
+      </div>
+
+      <div class="meta">
+        <strong>Opening hours</strong>
+        <div class="section">
+          <table class="hours" aria-label="Opening hours">
+            <tbody>
+              <tr><td>Monday</td><td>4:00 PM — 11:00 PM</td></tr>
+              <tr><td>Tuesday</td><td>4:00 PM — 11:00 PM</td></tr>
+              <tr><td>Wednesday</td><td>4:00 PM — 11:00 PM</td></tr>
+              <tr><td>Thursday</td><td>4:00 PM — 11:00 PM</td></tr>
+              <tr><td>Friday</td><td>4:00 PM — 11:00 PM</td></tr>
+              <tr><td>Saturday</td><td>4:00 PM — 11:00 PM</td></tr>
+              <tr><td>Sunday</td><td>4:00 PM — 11:00 PM</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section" aria-labelledby="ratingHeading">
+          <h3 id="ratingHeading" style="margin:8px 0">Rating & quick info</h3>
+          <p>Google / listing rating: <strong>≈ 4.6 ★</strong></p>
+          <p>Takeaway available • Dinner service • Casual seating</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Gallery</h2>
+      <p>Photos from public listings.</p>
+      <div class="gallery" role="list">
+        <img src="https://img02.restaurantguru.com/c13f-Restaurant-MADRAS-CAFE-DOSA-SAMBHAR-dishes.jpg" alt="Masala dosa and plates — Madras Cafe" />
+        <img src="https://img02.restaurantguru.com/maps/madras-cafe-dosa-sambhar-jaipur-map.jpg" alt="Map extract — Madras Cafe location" />
+      </div>
+    </section>
+
+    <section class="section reviews" aria-labelledby="reviewsHeading">
+      <h2 id="reviewsHeading">Customer reviews (sample)</h2>
+
+      <div class="review">
+        <strong>“Amazing dosa — very good taste.”</strong>
+        <div style="margin-top:6px; font-size:0.95rem; color:#555">— Recent visitor</div>
+      </div>
+
+      <div class="review">
+        <strong>“Authentic dosa & sambhar, fast service.”</strong>
+        <div style="margin-top:6px; font-size:0.95rem; color:#555">— Customer review</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Sources & links</h2>
+      <ul>
+        <li><a href="https://maps.app.goo.gl/r2UnA5fRYeLgSXG66" target="_blank">Google Maps</a></li>
+        <li><a href="https://restaurant-guru.in/MADRAS-CAFE-DOSA-SAMBHAR-Jaipur" target="_blank">Restaurant Guru</a></li>
+        <li><a href="https://www.zomato.com/jaipur/madras-cafe-bais-godam" target="_blank">Zomato</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      <small>Made with public listing data.</small>
+    </footer>
+  </main>
+
+  <script>
+    // also copy desktop status to mobile version
+    window.onload = function () {
+      updateShopStatus();
+      document.getElementById("shopStatusMobile").textContent =
+        document.getElementById("shopStatus").textContent;
+      document.getElementById("shopStatusMobile").className =
+        document.getElementById("shopStatus").className;
+      document.getElementById("shopStatusMobile").style.display = "inline-block";
+    }
+  </script>
+
+</body>
+</html>
