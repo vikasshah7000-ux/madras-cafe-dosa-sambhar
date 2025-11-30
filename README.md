@@ -1,2 +1,2 @@
-# madras-cafe-dosa-sambhar
+# Madras-Cafe-Dosa-Sambhar
 Madras Cafe Dosa Sambhar
